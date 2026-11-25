@@ -119,20 +119,21 @@ nanoparticles. In bulk mixtures the leading effective term is a pair potential, 
 the depletion potential. Here the interface instead produces a strong **one-body** term
 $`V_\mathrm{eff}(z)`$. It can be computed in two independent ways:
 
-1. **From the binary mixture.** In the dilute limit
-   $`\rho_2(z)=\rho_{2,0}\,e^{-\beta V_\mathrm{eff}(z)}`$, so
-   $`\beta V_\mathrm{eff}(z)=-\lim_{\rho_{2,0}\to0}\ln[\rho_2(z)/\rho_{2,0}]`$. This is evaluated at
-   a small but finite $`\rho_{2,0}`$.
-2. **Widom insertion.** Move a solute particle from the bulk to height $`z`$. The change in grand
-   potential is
+**1. From the binary mixture.** In the dilute limit
+$`\rho_2(z)=\rho_{2,0}\,e^{-\beta V_\mathrm{eff}(z)}`$, so
+$`\beta V_\mathrm{eff}(z)=-\lim_{\rho_{2,0}\to0}\ln[\rho_2(z)/\rho_{2,0}]`$. This is evaluated at
+a small but finite $`\rho_{2,0}`$.
 
-   ```math
-   \beta V_\mathrm{eff}(z)=\lim_{\rho_{2,0}\to0}\left[c^{(1)}_2(\pm\infty)-c^{(1)}_2(z)\right].
-   ```
+**2. Widom insertion.** Move a solute particle from the bulk to height $`z`$. The change in grand
+potential is
 
-   Here the dilute limit is taken **exactly**. The solute's one-body direct correlation function
-   is evaluated on the *pure-solvent* interface, so no solute is needed in the calculation; only
-   the mixture functional is.
+```math
+\beta V_\mathrm{eff}(z)=\lim_{\rho_{2,0}\to0}\left[c^{(1)}_2(\pm\infty)-c^{(1)}_2(z)\right].
+```
+
+Here the dilute limit is taken **exactly**. The solute's one-body direct correlation function
+is evaluated on the *pure-solvent* interface, so no solute is needed in the calculation; only
+the mixture functional is.
 
 ---
 
@@ -155,9 +156,9 @@ barely perturbs it, but the solute itself **adsorbs at the interface**.
        alt="Solute density profiles for size ratios 1 to 3, each below, at and above the symmetric energy, plus peak enrichment versus size ratio">
 </p>
 
-Each panel shows ε₂ just below, at and just above the symmetric value. Solvophobic and
+Each panel shows $`\epsilon_2`$ just below, at and just above the symmetric value. Solvophobic and
 solvophilic solutes are both attracted to the interface. The interfacial enrichment grows from a
-factor of about 2 for equal sizes to about 1.6·10⁴ for σ₂/σ₁ = 3. The adsorbed particles lower the
+factor of about 2 for equal sizes to about $`1.6\cdot10^4`$ for $`\sigma_2/\sigma_1=3`$. The adsorbed particles lower the
 surface tension, as the Gibbs adsorption equation predicts.
 
 <p align="center">
@@ -165,15 +166,15 @@ surface tension, as the Gibbs adsorption equation predicts.
        alt="Effective potential from Widom insertion for symmetric solutes of size ratio 1 to 3; the well deepens from about -0.8 to -9.8 kT">
 </p>
 
-| σ₂/σ₁ | symmetric βε₂* | βγσ₁² | max ρ₂/ρ₂,₀ | min βV_eff (Widom) | max \|ΔβV_eff\| between routes |
+| $`\sigma_2/\sigma_1`$ | symmetric $`\beta\epsilon_2^*`$ | $`\beta\gamma\sigma_1^2`$ | $`\max_z\rho_2/\rho_{2,0}`$ | $`\min_z\beta V_\mathrm{eff}`$ (Widom) | $`\max_z\lvert\Delta\beta V_\mathrm{eff}\rvert`$ between routes |
 |:-:|:-:|:-:|:-:|:-:|:-:|
-| 1   | 0.4233 | 0.209051 | 2.2      | −0.80 | 3·10⁻⁵ |
-| 1.5 | 0.8559 | 0.209050 | 7.0      | −1.95 | 9·10⁻⁵ |
-| 2   | 1.3918 | 0.209040 | 43.9     | −3.78 | 5·10⁻⁴ |
-| 2.5 | 1.9859 | 0.208967 | 581      | −6.37 | 7·10⁻³ |
-| 3   | 2.6047 | 0.207806 | 15 918   | −9.82 | 0.22   |
+| 1   | 0.4233 | 0.209051 | 2.2      | -0.80 | $`3\cdot10^{-5}`$ |
+| 1.5 | 0.8559 | 0.209050 | 7.0      | -1.95 | $`9\cdot10^{-5}`$ |
+| 2   | 1.3918 | 0.209040 | 43.9     | -3.78 | $`5\cdot10^{-4}`$ |
+| 2.5 | 1.9859 | 0.208967 | 581      | -6.37 | $`7\cdot10^{-3}`$ |
+| 3   | 2.6047 | 0.207806 | 15 918   | -9.82 | 0.22   |
 
-The two routes to $`V_\mathrm{eff}`$ agree up to σ₂/σ₁ = 2.5. At σ₂/σ₁ = 3 the interface is enriched
+The two routes to $`V_\mathrm{eff}`$ agree up to $`\sigma_2/\sigma_1=2.5`$. At $`\sigma_2/\sigma_1=3`$ the interface is enriched
 so much that the local solute packing fraction reaches about 1.6 %. The finite-$`\rho_{2,0}`$ mixture
 route then starts to depart from the strict dilute limit. The Widom route has no such issue.
 
@@ -218,14 +219,14 @@ python scripts/make_figures.py
 
 | option | meaning | default |
 |---|---|---|
-| `-q` | size ratio σ₂/σ₁ (a multiple of 1/`grid`) | 2.0 |
-| `-e` | βε₂ of the solute | 1.3918 |
-| `-s` | solve for the symmetric βε₂* ($`\rho_2^l=\rho_2^v`$); `-e` is the initial guess | off |
-| `-l` | λ₂ | 1 + (λ₁−1)/q |
-| `-E`, `-L` | βε₁, λ₁ of the solvent | 1.0, 1.5 |
-| `-x` | solute packing fraction $`\rho_{2,0}`$ in the liquid | 10⁻⁶ |
-| `-g` | grid points per σ₁/2 | 60 |
-| `-a`, `-n`, `-t` | Picard mixing, max. iterations, tolerance | 0.01, 75000, 10⁻¹⁴ |
+| `-q` | size ratio $`\sigma_2/\sigma_1`$ (a multiple of 1/`grid`) | 2.0 |
+| `-e` | $`\beta\epsilon_2`$ of the solute | 1.3918 |
+| `-s` | solve for the symmetric $`\beta\epsilon_2^*`$ ($`\rho_2^l=\rho_2^v`$); `-e` is the initial guess | off |
+| `-l` | $`\lambda_2`$ | $`1+(\lambda_1-1)/q`$ |
+| `-E`, `-L` | $`\beta\epsilon_1`$, $`\lambda_1`$ of the solvent | 1.0, 1.5 |
+| `-x` | solute packing fraction $`\rho_{2,0}`$ in the liquid | $`10^{-6}`$ |
+| `-g` | grid points per $`\sigma_1/2`$ | 60 |
+| `-a`, `-n`, `-t` | Picard mixing, max. iterations, tolerance | 0.01, 75000, $`10^{-14}`$ |
 | `-o` | output directory | `.` |
 
 The solver first finds the binary liquid-vapor coexistence itself, so no densities have to be
