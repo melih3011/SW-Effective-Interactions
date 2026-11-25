@@ -29,7 +29,7 @@ Widom-insertion route (line) give the same effective potential.</sub></p>
 Both components are hard spheres with a square-well (SW) attraction:
 
 ```math
-\phi_{ij}(r)=\left\lbrace\begin{array}{ll} \infty, & r\le\sigma_{ij} \\ -\epsilon_{ij}, & \sigma_{ij}<r<\lambda_{ij}\sigma_{ij} \\ 0, & \text{otherwise} \end{array}\right. \qquad \sigma_{ij}=\frac{\sigma_i+\sigma_j}{2}
+\phi_{ij}(r)=\left\lbrace\begin{array}{ll} \infty, & r\le\sigma_{ij} \\ -\epsilon_{ij}, & \sigma_{ij}\lt r\lt \lambda_{ij}\sigma_{ij} \\ 0, & \text{otherwise} \end{array}\right. \qquad \sigma_{ij}=\frac{\sigma_i+\sigma_j}{2}
 ```
 
 Component 1 is the **solvent** ($`\beta\epsilon_1=1`$, $`\lambda_1=1.5`$). It phase-separates into liquid
@@ -73,7 +73,7 @@ hard-core overlap into an attraction; without them the functional describes squa
 In the bulk this gives
 
 ```math
-f_\mathrm{sw}=-\sum_i\frac{2\pi}{3}\rho_i^2(\lambda_i\sigma_i)^3\epsilon_i -\sum_{i<j}\frac{\pi}{6}\rho_i\rho_j(\lambda_i\sigma_i+\lambda_j\sigma_j)^3\sqrt{\epsilon_i\epsilon_j}.
+f_\mathrm{sw}=-\sum_i\frac{2\pi}{3}\rho_i^2(\lambda_i\sigma_i)^3\epsilon_i -\sum_{i\lt j}\frac{\pi}{6}\rho_i\rho_j(\lambda_i\sigma_i+\lambda_j\sigma_j)^3\sqrt{\epsilon_i\epsilon_j}.
 ```
 
 That is the RPA result for **Lorentz-Berthelot mixing**,
