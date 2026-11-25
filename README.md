@@ -29,13 +29,7 @@ Widom-insertion route (line) give the same effective potential.</sub></p>
 Both components are hard spheres with a square-well (SW) attraction:
 
 ```math
-\phi_{ij}(r)=
-\begin{cases}
-\infty, & r\le\sigma_{ij},\\
--\epsilon_{ij}, & \sigma_{ij}<r<\lambda_{ij}\sigma_{ij},\\
-0, & \text{otherwise},
-\end{cases}
-\qquad \sigma_{ij}=\frac{\sigma_i+\sigma_j}{2}.
+\phi_{ij}(r)=\left\lbrace\begin{array}{ll} \infty, & r\le\sigma_{ij} \\ -\epsilon_{ij}, & \sigma_{ij}<r<\lambda_{ij}\sigma_{ij} \\ 0, & \text{otherwise} \end{array}\right. \qquad \sigma_{ij}=\frac{\sigma_i+\sigma_j}{2}
 ```
 
 Component 1 is the **solvent** ($`\beta\epsilon_1=1`$, $`\lambda_1=1.5`$). It phase-separates into liquid
@@ -47,13 +41,12 @@ and well width $`\sigma_2(\lambda_2-1)=\sigma_1(\lambda_1-1)`$.
 The grand-potential functional is
 
 ```math
-\Omega[\rho_1,\rho_2]=\mathcal F_\mathrm{id}+\mathcal F_\mathrm{hs}+\mathcal F_\mathrm{sw}
--\sum_i\mu_i\int\mathrm d\mathbf r\,\rho_i(\mathbf r).
+\Omega[\rho_1,\rho_2]=\mathcal F_\mathrm{id}+\mathcal F_\mathrm{hs}+\mathcal F_\mathrm{sw} -\sum_i\mu_i\int\mathrm d\mathbf r\,\rho_i(\mathbf r).
 ```
 
 The hard-sphere reference $`\mathcal F_\mathrm{hs}`$ is the **White-Bear** version of fundamental
 measure theory (FMT). The attraction is treated in the (optimised) **random-phase approximation**,
-$`\beta\mathcal F_\mathrm{sw}=\tfrac12\sum_{ij}\iint\rho_i\rho_j\,\beta\phi^{ij}_\mathrm{sw}`$, with the
+$`\beta\mathcal F_\mathrm{sw}=\frac{1}{2}\sum_{ij}\iint\rho_i\rho_j\,\beta\phi^{ij}_\mathrm{sw}`$, with the
 well extended into the core.
 
 ### FMT-like square-well functional
@@ -64,20 +57,14 @@ can be deconvolved into single-sphere weight functions. The SW perturbation can 
 written with weighted densities, like FMT:
 
 ```math
-\beta\mathcal F_\mathrm{sw}=\int\mathrm d\mathbf r\,
-\left(n^\epsilon_0n^\epsilon_3+n^\epsilon_1n^\epsilon_2-\mathbf n^\epsilon_1\cdot\mathbf n^\epsilon_2\right),
-\qquad
-n^\epsilon_\alpha(\mathbf r)=\sum_i\int\mathrm d\mathbf r'\,\rho_i(\mathbf r')\,w^{\epsilon,i}_\alpha(\mathbf r-\mathbf r').
+\beta\mathcal F_\mathrm{sw}=\int\mathrm d\mathbf r\, \left(n^\epsilon_0n^\epsilon_3+n^\epsilon_1n^\epsilon_2-\mathbf n^\epsilon_1\cdot\mathbf n^\epsilon_2\right), \qquad n^\epsilon_\alpha(\mathbf r)=\sum_i\int\mathrm d\mathbf r'\,\rho_i(\mathbf r')\,w^{\epsilon,i}_\alpha(\mathbf r-\mathbf r').
 ```
 
 The SW weights are FMT weights of a sphere with radius $`\lambda_iR_i`$ ($`R_i=\sigma_i/2`$),
 multiplied by $`\sqrt{\beta\epsilon_i}`$:
 
 ```math
-w^{\epsilon,i}_3=\sqrt{\epsilon_i}\,\Theta(\lambda_iR_i-r),\qquad
-w^{\epsilon,i}_2=\sqrt{\epsilon_i}\,\delta(\lambda_iR_i-r),\qquad
-w^{\epsilon,i}_1=-\frac{w^{\epsilon,i}_2}{4\pi\lambda_iR_i},\qquad
-w^{\epsilon,i}_0=-\frac{w^{\epsilon,i}_2}{4\pi(\lambda_iR_i)^2},
+w^{\epsilon,i}_3=\sqrt{\epsilon_i}\,\Theta(\lambda_iR_i-r),\qquad w^{\epsilon,i}_2=\sqrt{\epsilon_i}\,\delta(\lambda_iR_i-r),\qquad w^{\epsilon,i}_1=-\frac{w^{\epsilon,i}_2}{4\pi\lambda_iR_i},\qquad w^{\epsilon,i}_0=-\frac{w^{\epsilon,i}_2}{4\pi(\lambda_iR_i)^2},
 ```
 
 with $`\mathbf w^{\epsilon,i}_2=w^{\epsilon,i}_2\,\mathbf r/r`$ and
@@ -86,8 +73,7 @@ hard-core overlap into an attraction; without them the functional describes squa
 In the bulk this gives
 
 ```math
-f_\mathrm{sw}=-\sum_i\frac{2\pi}{3}\rho_i^2(\lambda_i\sigma_i)^3\epsilon_i
--\sum_{i<j}\frac{\pi}{6}\rho_i\rho_j(\lambda_i\sigma_i+\lambda_j\sigma_j)^3\sqrt{\epsilon_i\epsilon_j}.
+f_\mathrm{sw}=-\sum_i\frac{2\pi}{3}\rho_i^2(\lambda_i\sigma_i)^3\epsilon_i -\sum_{i<j}\frac{\pi}{6}\rho_i\rho_j(\lambda_i\sigma_i+\lambda_j\sigma_j)^3\sqrt{\epsilon_i\epsilon_j}.
 ```
 
 That is the RPA result for **Lorentz-Berthelot mixing**,
@@ -166,7 +152,7 @@ surface tension, as the Gibbs adsorption equation predicts.
        alt="Effective potential from Widom insertion for symmetric solutes of size ratio 1 to 3; the well deepens from about -0.8 to -9.8 kT">
 </p>
 
-| $`\sigma_2/\sigma_1`$ | symmetric $`\beta\epsilon_2^*`$ | $`\beta\gamma\sigma_1^2`$ | $`\max_z\rho_2/\rho_{2,0}`$ | $`\min_z\beta V_\mathrm{eff}`$ (Widom) | $`\max_z\lvert\Delta\beta V_\mathrm{eff}\rvert`$ between routes |
+| $`\sigma_2/\sigma_1`$ | symmetric $`\beta\epsilon_2^*`$ | $`\beta\gamma\sigma_1^2`$ | $`\max_z\rho_2/\rho_{2,0}`$ | $`\min_z\beta V_\mathrm{eff}`$ (Widom) | $`\max_z\vert\Delta\beta V_\mathrm{eff}\vert`$ between routes |
 |:-:|:-:|:-:|:-:|:-:|:-:|
 | 1   | 0.4233 | 0.209051 | 2.2      | -0.80 | $`3\cdot10^{-5}`$ |
 | 1.5 | 0.8559 | 0.209050 | 7.0      | -1.95 | $`9\cdot10^{-5}`$ |
