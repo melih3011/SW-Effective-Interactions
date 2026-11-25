@@ -1,0 +1,24 @@
+# Local material that is not part of the repository:
+# manuscript, referee reports, letters, literature and the original code
+paper/
+# simulation output (reproduce with scripts/run_paper.sh)
+data/
+*.tex
+*.bib
+*.pdf
+*.docx
+*.rtf
+
+# Build products
+src/*.o
+src/sw_interface
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/

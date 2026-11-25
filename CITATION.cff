@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the article below."
+title: "SW-Effective-Interactions: DFT for binary square-well mixtures and interface-induced effective potentials"
+authors:
+  - family-names: "Gül"
+    given-names: "Melih"
+  - family-names: "Roth"
+    given-names: "Roland"
+repository-code: "https://github.com/melih3011/SW-Effective-Interactions"
+preferred-citation:
+  type: article
+  title: "Effective one-body interactions due to the presence of a liquid-vapor interface"
+  authors:
+    - family-names: "Gül"
+      given-names: "Melih"
+    - family-names: "Roth"
+      given-names: "Roland"
+  journal: "Physica A: Statistical Mechanics and its Applications"
+  volume: 674
+  start: 130686
+  year: 2025
+  doi: "10.1016/j.physa.2025.130686"
+  identifiers:
+    - type: other
+      value: "arXiv:2608.09375"
